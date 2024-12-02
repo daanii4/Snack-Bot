@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import ROSLIB from "roslib";
 
@@ -9,7 +11,6 @@ const Visualization = () => {
     ros.on("error", (error) => console.error("Error connecting to ROS:", error));
     ros.on("close", () => console.log("Disconnected from ROS"));
 
-    // Subscribe to a topic
     const humanDetection = new ROSLIB.Topic({
       ros,
       name: "/detectnet/detections",
@@ -20,10 +21,15 @@ const Visualization = () => {
       console.log("Detected Humans:", message);
     });
 
-    return () => ros.close(); // Cleanup on unmount
+    return () => ros.close();
   }, []);
 
-  return <div className="visualization">Real-Time Map Coming Soon...</div>;
+  return (
+    <div className="bg-gray-800 p-4 rounded-lg">
+      <p>Real-Time Human Detection Visualization</p>
+      {/* Extend this to show a graphical map */}
+    </div>
+  );
 };
 
 export default Visualization;

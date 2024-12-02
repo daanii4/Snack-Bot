@@ -22,8 +22,8 @@ const BluetoothScanner = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <h1 className="text-3xl font-bold">Bluetooth Devices</h1>
+    <div className="text-center">
+      <h1 className="text-3xl font-bold mb-4">Bluetooth Devices</h1>
       <button
         className="bg-blue-500 text-white px-4 py-2 rounded my-4"
         onClick={scanDevices}
@@ -32,7 +32,7 @@ const BluetoothScanner = () => {
       </button>
       <ul>
         {devices.map((device: { name: string }, index: number) => (
-          <li key={index}>
+          <li key={index} className="mb-2">
             {device.name}
             <button
               className="bg-green-500 px-2 py-1 ml-2 rounded"

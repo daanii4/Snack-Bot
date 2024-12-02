@@ -13,26 +13,28 @@ const PredefinedCommands = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-800 text-white p-4">
-      <h1 className="text-2xl font-bold mb-4">Predefined Commands</h1>
-      <button
-        className="bg-blue-500 px-4 py-2 rounded m-2"
-        onClick={() => sendCommand("GET_SNACK")}
-      >
-        Get Snack
-      </button>
-      <button
-        className="bg-green-500 px-4 py-2 rounded m-2"
-        onClick={() => sendCommand("COME_HERE")}
-      >
-        Come Here
-      </button>
-      <button
-        className="bg-yellow-500 px-4 py-2 rounded m-2"
-        onClick={() => sendCommand("SPIN")}
-      >
-        Spin in Place
-      </button>
+    <div className="text-center">
+      <h1 className="text-3xl font-bold mb-4">Predefined Commands</h1>
+      <div className="space-y-4">
+        <button
+          className="bg-blue-500 px-4 py-2 rounded"
+          onClick={() => sendCommand("GET_SNACK")}
+        >
+          Get Snack
+        </button>
+        <button
+          className="bg-green-500 px-4 py-2 rounded"
+          onClick={() => sendCommand("COME_HERE")}
+        >
+          Come Here
+        </button>
+        <button
+          className="bg-yellow-500 px-4 py-2 rounded"
+          onClick={() => sendCommand("SPIN")}
+        >
+          Spin in Place
+        </button>
+      </div>
     </div>
   );
 };
